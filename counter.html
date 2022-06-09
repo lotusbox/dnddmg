@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- CSS code-->
+  
+        <style>
+            /*apply css properties to body tag*/
+  
+            body {
+                position: absolute;
+                left: 0%;
+                text-align: center;
+            }
+  
+            /*apply css properties to container class*/
+  
+            .container {
+                justify-content: center;
+                align-items: center;
+                display: flex;
+                height: 100%;
+                text-align: center;
+            }
+  
+            /*apply css properties to button tag*/
+  
+            button {
+                width: 50px;
+                height: 20px;
+                font-size: 12px;
+                background-color: rgb(203, 21, 21);
+                color: honeydew;
+            }
+  
+            /*apply hover effect to button tag*/
+  
+            button:hover {
+                background-color: rgb(255, 89, 0);
+                color: rgb(255, 255, 255);
+            }
+
+
+            input {
+                width: 45px;
+                color: rgb(0, 0, 0);
+                background-color: rgb(255, 255, 255);
+            }
+  
+            /*apply css properties to h2 tag*/
+  
+            h2 {
+                color: black;
+                margin: 0 50px;
+                font-size: 30px;
+            }
+            /*apply css properties to h1 tag*/
+  
+            h1 {
+                font-size: 35px;
+                color: green;
+                text-align: center;
+                padding-left: 10%;
+            }
+        </style>
+    </head>
+  
+    <body>
+        <!-- give a suitable heading using h1 tag-->
+        <h1></h1>
+  
+        <div ="container">
+            <!-- adding button and heading to show the digits -->
+            <!-- increment() and decrement() functions on button click-->
+            <button onclick="increment()">+</button>
+            <h2 id="counting"></h2>
+            <button onclick="decrement()">-</button> <br/>
+
+            <input type="number" id="hpDefault" value=0/>
+            <input type="number" id="dmg" value=0/>
+            <input type="number" id="heal" value=0/> <br/>
+            <button onclick="getValue()">DEF</button>
+    
+            
+            <button onclick="takeDamage(); document.getElementById(
+                'dmg').value = ''">DMG</button>
+    
+            
+            <button onclick="receiveHealing(); document.getElementById(
+                'heal').value = ''">REC</button>
+
+
+
+        </div>
+
+
+
+    
+        <!-- JavaScript code-->
+        <script>
+            //initialising a variable name data
+            var data = 0;
+  
+            //printing default value of data that is 0 in h2 tag
+            document.getElementById("counting").innerText = data;
+  
+            //creation of increment function
+            function increment() {
+                data = data + 1;
+                document.getElementById("counting").innerText = data;
+            }
+            //creation of decrement function
+            function decrement() {
+                data = data - 1;
+                document.getElementById("counting").innerText = data;
+            }
+
+            function getValue() {
+                var x = document.getElementById("hpDefault").value;
+                data = x;
+                document.getElementById("counting").innerText = data;
+            }
+
+            function takeDamage() {
+                var y = document.getElementById("dmg").value;
+                data = data - y;
+                document.getElementById("counting").innerText = data;
+            }
+
+            function receiveHealing(){
+                var y = document.getElementById("heal").value;
+                data = +data + +y;
+                document.getElementById("counting").innerText = data;
+            }
+        </script>
+    </body>
+</html>
